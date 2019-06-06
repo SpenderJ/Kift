@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:27:04 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/05 13:00:49 by ale-goff         ###   ########.fr       */
+/*   Updated: 2019/06/06 12:57:45 by ale-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ void				search_web(const char *str);
 void				check_traffic(const char *str);
 void				play_music(const char *str);
 void 				check_event(const char *str);
+void				open_app(const char *str);
+void				set_timer(const char *str);
 # endif

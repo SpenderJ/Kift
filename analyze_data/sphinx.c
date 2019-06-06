@@ -72,6 +72,8 @@ t_dispatch	g_fn[] = {
 	"LIGHTS OFF", lights_off,
 	"LIGHTS FULL", lights_full,
 	"LIGHTS DOWN", lights_down,
+	"OPEN", open_app,
+	"SET TIMER", set_timer
 	// "WHO IS CONNECTED", who_is_connected,
 	// "WHERE I AM CONNECTED", where_is_connected,
 	"CHECK TRAFFIC", check_traffic,

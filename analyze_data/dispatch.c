@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:26:27 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/06 09:13:19 by juspende         ###   ########.fr       */
+/*   Updated: 2019/06/06 12:59:51 by ale-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void		weather_script(const char *str)
 {
 	char buff[1048];
+
 	snprintf(buff, sizeof(buff), "osascript script/weather.script %s", str);
 	system(buff);
 }
@@ -82,6 +83,7 @@ void		play_music(const char *str)
 void		search_web(const char *str)
 {
 	char buff[1048];
+
 	snprintf(buff, sizeof(buff), "osascript script/search_web.script %s", str);
 	system(buff);
 }
@@ -90,4 +92,18 @@ void		check_event(const char *str)
 {
 	(void)str;
 	system("osascript script/check_event.script");
+}
+
+void		open_app(const char *str)
+{
+	char buff[1048];
+
+	snprintf(buff, sizeof(buff), "osascript script/open.script %s", str);
+	system(buff);
+}
+
+void		set_timer(const char *str)
+{
+	(void)str;
+	system("osascript script/set_timer.script");
 }
