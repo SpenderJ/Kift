@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.c09ebc4f.chunk.css",
-    "main.js": "/static/js/main.75e5a25b.chunk.js",
-    "main.js.map": "/static/js/main.75e5a25b.chunk.js.map",
+    "main.js": "/static/js/main.89ef3e74.chunk.js",
+    "main.js.map": "/static/js/main.89ef3e74.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.2315d9b4.chunk.js": "/static/js/2.2315d9b4.chunk.js",
     "static/js/2.2315d9b4.chunk.js.map": "/static/js/2.2315d9b4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.075e371f7e2dce36bfe26c363e9a995f.js": "/precache-manifest.075e371f7e2dce36bfe26c363e9a995f.js",
+    "precache-manifest.bb1cd19c06c414a794e102bcd229be82.js": "/precache-manifest.bb1cd19c06c414a794e102bcd229be82.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.c09ebc4f.chunk.css.map": "/static/css/main.c09ebc4f.chunk.css.map",
     "static/media/rick.png": "/static/media/rick.fcf97f8c.png"
