@@ -17,9 +17,9 @@ int				sendaudio(t_http *request, t_reponse *answer)
 					data->value, "target.wav");
 			system(buffer);
 			word = get_string("target.wav");
-			printf("ICI LA TOUR DE CONTROLE ON A LE WORD : %s ####################################################################\n", word);
 			system("rm target.wav");
 			snprintf(buffer, sizeof(buffer), "rm %s", data->value);
+			system(buffer);
 		}
 		content_free(data);
 	}
@@ -43,6 +43,10 @@ int				sendaudio(t_http *request, t_reponse *answer)
 	if (!word || !strcmp(word, "") || !strcmp(word, " "))
 		write(answer->fd, "Sorry Rick didn't hear, can you repeat pls?", 42);
 	else
+	{
+		snprintf(buffer, sizeof(buffer), "echo \"%s\" >> .history.txt", word);
+		system(buffer);
 		write(answer->fd, word, strlen(word));
+	}
 	return (OK);
 }
