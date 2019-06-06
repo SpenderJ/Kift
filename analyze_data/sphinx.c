@@ -68,14 +68,15 @@ t_dispatch	g_fn[] = {
 	"CHECK WEATHER", weather_script,
 	"SET ALARM", alarm_script,
 	"SEND EMAIL", send_email,
+	"SEND SMS", send_sms,
 	"LIGHTS ON", lights_on,
 	"LIGHTS OFF", lights_off,
 	"LIGHTS FULL", lights_full,
 	"LIGHTS DOWN", lights_down,
 	"OPEN", open_app,
-	"SET TIMER", set_timer
-	// "WHO IS CONNECTED", who_is_connected,
-	// "WHERE I AM CONNECTED", where_is_connected,
+	"SET TIMER", set_timer,
+	"WHO IS CONNECTED", who_is_connected,
+	"WHERE IS CONNECTED", where_is_connected,
 	"CHECK TRAFFIC", check_traffic,
 	"CHECK EVENTS", check_event,
 	"PLAY MUSIC", play_music,
@@ -87,7 +88,7 @@ static int			exec_cmd(const char *str)
 	int		i;
 
 	i = 0;
-	while (i < 12)
+	while (i < 17)
 	{
 		if (!strncmp(str, g_fn[i].key, strlen(g_fn[i].key)))
 		{

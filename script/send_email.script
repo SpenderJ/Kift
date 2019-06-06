@@ -1,1 +1,3 @@
-osascript -e 'tell application "Mail" to open'
+tell application "Mail"
+	activate
+end tell

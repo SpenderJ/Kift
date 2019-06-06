@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:27:04 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/06 12:57:45 by ale-goff         ###   ########.fr       */
+/*   Updated: 2019/06/06 14:59:11 by ale-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,7 @@ void				play_music(const char *str);
 void 				check_event(const char *str);
 void				open_app(const char *str);
 void				set_timer(const char *str);
+void				send_sms(const char *str);
+void				who_is_connected(const char *str);
+void				where_is_connected(const char *str);
 # endif

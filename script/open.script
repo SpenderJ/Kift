@@ -1,0 +1,9 @@
+on run argv
+	set saveTID to text item delimiters
+	set text item delimiters to " "
+    set av to argv as text
+    set text item delimiters to saveTID	
+	tell application av
+		activate
+	end tell
+end run

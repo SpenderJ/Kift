@@ -1,6 +1,2 @@
-tell application "Calendar"
-	activate
-	tell calendar "Project Calendar"
-		activate
-	end tell
-end tell
+open location "https://onlineclock.net/"
+
