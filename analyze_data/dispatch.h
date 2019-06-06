@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:27:04 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/06 14:59:11 by ale-goff         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:26:11 by ale-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void				unknown_command(const char *str);
 void				say_hello(const char *str);
 void				send_email(const char *str);
 void				lights_on(const char *str);
+void				check_history(const char *str);
 void				lights_off(const char *str);
 void				lights_full(const char *str);
 void				lights_down(const char *str);

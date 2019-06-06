@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:26:27 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/06 15:04:07 by ale-goff         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:42:37 by ale-goff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ void		alarm_script(const char *str)
 	(void)str;
 	system("osascript script/alarm.script");
 	system("say I opened the application for you");
+}
+
+void		check_history(const char *str)
+{
+	(void)str;
+	system("open .history.txt");
 }
 
 void		unknown_command(const char *str)

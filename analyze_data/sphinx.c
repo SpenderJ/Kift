@@ -69,6 +69,7 @@ t_dispatch	g_fn[] = {
 	"SET ALARM", alarm_script,
 	"SEND EMAIL", send_email,
 	"SEND SMS", send_sms,
+	"CHECK HISTORY", check_history,
 	"LIGHTS ON", lights_on,
 	"LIGHTS OFF", lights_off,
 	"LIGHTS FULL", lights_full,
