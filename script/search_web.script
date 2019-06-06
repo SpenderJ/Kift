@@ -3,6 +3,6 @@ on run argv
 	set text item delimiters to " "
 	set av to argv as text
 	set text item delimiters to saveTID
-	open location "https://www.google.com/search?q=definition " & av
+	open location "https://www.google.com/search?q= " & av
 end run
 

@@ -18,12 +18,14 @@ void		weather_script(const char *str)
 
 	snprintf(buff, sizeof(buff), "osascript script/weather.script %s", str);
 	system(buff);
+	system('say "Here is the weather"');
 }
 
 void		alarm_script(const char *str)
 {
 	(void)str;
 	system("osascript script/alarm.script");
+	system('say "I opened the application for you"');
 }
 
 void		unknown_command(const char *str)
@@ -42,42 +44,49 @@ void		send_email(const char *str)
 {
 	(void)str;
 	system("osascript script/send_email.script");
+	system('say "I opened the application for you"');
 }
 
 void		lights_on(const char *str)
 {
 	(void)str;
 	system("osascript script/lights_on.script");
+	system('say "I increased the lights"');
 }
 
 void		lights_off(const char *str)
 {
 	(void)str;
 	system("osascript script/lights_off.script");
+	system('say "I decreased the lights"');
 }
 
 void		lights_full(const char *str)
 {
 	(void)str;
 	system("osascript script/light_full.script");
+	system('say "I increased the lights"');
 }
 
 void		lights_down(const char *str)
 {
 	(void)str;
 	system("osascript script/light_down.script");
+	system('say "I decreased the lights"');
 }
 
 void		check_traffic(const char *str)
 {
 	(void)str;
 	system("osascript script/check_traffic.script");
+	system('say "Here you can check the traffic"');
 }
 
 void		play_music(const char *str)
 {
 	(void)str;
 	system("osascript script/play_music.script");
+	system('say "Please, choose your music"');
 }
 
 void		search_web(const char *str)
@@ -86,12 +95,14 @@ void		search_web(const char *str)
 
 	snprintf(buff, sizeof(buff), "osascript script/search_web.script %s", str);
 	system(buff);
+	system('say "I asked my friend Google for you"');
 }
 
 void		check_event(const char *str)
 {
 	(void)str;
 	system("osascript script/check_event.script");
+	system('say "I opened your calendar so you can see your future events"');
 }
 
 void		open_app(const char *str)
@@ -100,10 +111,12 @@ void		open_app(const char *str)
 
 	snprintf(buff, sizeof(buff), "osascript script/open.script %s", str);
 	system(buff);
+	system('say "I opened the application"');
 }
 
 void		set_timer(const char *str)
 {
 	(void)str;
 	system("osascript script/set_timer.script");
+	system('say "I opened the application for you"');
 }
