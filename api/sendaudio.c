@@ -19,6 +19,7 @@ int				sendaudio(t_http *request, t_reponse *answer)
 			word = get_string("target.wav");
 			printf("ICI LA TOUR DE CONTROLE ON A LE WORD : %s ####################################################################\n", word);
 			system("rm target.wav");
+			snprintf(buffer, sizeof(buffer), "rm %s", data->value);
 		}
 		content_free(data);
 	}
@@ -39,7 +40,9 @@ int				sendaudio(t_http *request, t_reponse *answer)
 	word ? dprintf(answer->fd, "Content-Length: %lu\r\n",
 				(long unsigned int)strlen(word)) : 0;
 	dprintf(answer->fd, "\r\n");
-	if (word)
+	if (!word || !strcmp(word, "") || !strcmp(word, " "))
+		write(answer->fd, "Sorry Rick didn't hear, can you repeat pls?", 42);
+	else
 		write(answer->fd, word, strlen(word));
 	return (OK);
 }

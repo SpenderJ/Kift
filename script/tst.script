@@ -1,0 +1,5 @@
+on run argv
+	tell application "Google Chrome"
+		open location item 1 of argv
+	end tell
+end run

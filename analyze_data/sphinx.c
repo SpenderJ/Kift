@@ -57,13 +57,46 @@
 #include <sphinxbase/err.h>
 #include <sphinxbase/ad.h>
 #include "pocketsphinx.h"
-// #include "dispatch.h"
+#include "dispatch.h"
 
 static ps_decoder_t *g_ps;
 static cmd_ln_t		*g_config;
 static FILE			*g_rawfd;
 
+t_dispatch	g_fn[] = {
+	"SEARCH", search_web,
+	"CHECK WEATHER", weather_script,
+	"SET ALARM", alarm_script,
+	"SEND EMAIL", send_email,
+	"LIGHTS ON", lights_on,
+	"LIGHTS OFF", lights_off,
+	"LIGHTS FULL", lights_full,
+	"LIGHTS DOWN", lights_down,
+	// "WHO IS CONNECTED", who_is_connected,
+	// "WHERE I AM CONNECTED", where_is_connected,
+	"CHECK TRAFFIC", check_traffic,
+	"CHECK EVENTS", check_event,
+	"PLAY MUSIC", play_music,
+	"HELLO", say_hello,
+};
 
+static int			exec_cmd(const char *str)
+{
+	int		i;
+
+	i = 0;
+	while (i < 12)
+	{
+		if (!strncmp(str, g_fn[i].key, strlen(g_fn[i].key)))
+		{
+			g_fn[i].fn(str + strlen(g_fn[i].key));
+			return (0);
+		}
+		i++;
+	}
+	unknown_command(str);
+	return (1);
+}
 
 static const char	*recognize_from_file(char *path)
 {
@@ -122,7 +155,10 @@ const char			*get_string(char *path)
 		return (NULL);
 	}
 	str = recognize_from_file(path);
+	if (exec_cmd(str))
+		str = NULL;
 	ps_free(g_ps);
 	cmd_ln_free_r(g_config);
 	return (str);
 }
+

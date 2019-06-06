@@ -1,0 +1,8 @@
+on run argv
+	set saveTID to text item delimiters
+	set text item delimiters to " "
+	set av to argv as text
+	set text item delimiters to saveTID
+	open location "https://www.google.com/search?q=definition " & av
+end run
+

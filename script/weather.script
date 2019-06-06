@@ -1,0 +1,4 @@
+on run argv
+	open location "https://www.google.com/search?q=weather " & argv
+end run
+

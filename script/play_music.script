@@ -1,0 +1,3 @@
+on run argv
+	open location "https://www.youtube.com/results?search_query=music"
+end run

@@ -1,0 +1,5 @@
+tell application "System Events"
+        repeat 30
+                key code 113
+        end
+end tell

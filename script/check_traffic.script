@@ -1,0 +1,3 @@
+on run argv
+        open location "https://www.waze.com/livemap"
+end run
