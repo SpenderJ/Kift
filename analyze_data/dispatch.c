@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:26:27 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/07 14:56:19 by juspende         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:12:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@ void weather_script(const char *str)
 	system("say Here is the weather");
 }
 #else
-void search_web(const char *str)
+void weather_script(const char *str)
 {
-	(void)str;
+	char buff[1048];
+
+	snprintf(buff, sizeof(buff), "curl wttr.in/%s", str);
+	system(buff);
+	system("say Here is the weather");
 }
 #endif
 
@@ -48,6 +52,8 @@ void unknown_command(const char *str)
 	(void)str;
 #if defined(__APPLE__) && defined(__MACH__)
 	system("osascript script/unknown.script");
+#else
+	system("say I do not understand");
 #endif
 }
 
@@ -110,6 +116,9 @@ void check_traffic(const char *str)
 #if defined(__APPLE__) && defined(__MACH__)
 	system("osascript script/check_traffic.script");
 	system("say Here you can check the traffic");
+#else
+	system("open \"https://www.waze.com/livemap\"");
+	system("say Here you can check the traffic");
 #endif
 }
 
@@ -119,6 +128,9 @@ void play_music(const char *str)
 #if defined(__APPLE__) && defined(__MACH__)
 	system("osascript script/play_music.script");
 	system("say Please, choose your music");
+#else
+	system("open \"https://www.youtube.com/results?search_query=music\"");
+	system("say  Please, choose your music");
 #endif
 }
 
@@ -134,7 +146,11 @@ void search_web(const char *str)
 #else
 void search_web(const char *str)
 {
-	(void)str;
+	char buff[1048];
+
+	snprintf(buff, sizeof(buff), "open \"http:\/\/www.google.com/search?q=%s", str);
+	system(buff);
+	system("say I asked my friend Google for you");
 }
 #endif
 
@@ -199,7 +215,5 @@ void send_sms(const char *str)
 void pickle(const char *str)
 {
 	(void)str;
-#if defined(__APPLE__) && defined(__MACH__)
 	system("play ../audio/pickle.wav");
-#endif
 }
