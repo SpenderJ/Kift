@@ -41,7 +41,7 @@ int				sendaudio(t_http *request, t_reponse *answer)
 				(long unsigned int)strlen(word)) : 0;
 	dprintf(answer->fd, "\r\n");
 	if (!word || !strcmp(word, "") || !strcmp(word, " "))
-		write(answer->fd, "Sorry Rick didn't hear, can you repeat pls?", 42);
+		write(answer->fd, "\"What up, my glip-glops?\"", 25);
 	else
 	{
 		snprintf(buffer, sizeof(buffer), "echo \"%s\" >> .history.txt", word);

@@ -1,10 +1,16 @@
 CC				= gcc
 RM				= rm -f
 SERVER			= server
-CFLAGS			= -Wall -Wextra -g -I includes/ -I analyze_data
-INCLUDES		= -L$(HOME)/.brew/Cellar/cmu-pocketsphinx/HEAD-80d8e28/lib -L$(HOME)/.brew/Cellar/cmu-sphinxbase/HEAD-562d047/lib -lpocketsphinx -lsphinxbase -lsphinxad -lpthread -lm -lblas -llapack
+CFLAGS			= -Wall -Wextra -Werror -g
+INCLUDES		= -I includes/ -I analyze_data/
+
+LIBRARIES		= -L$(HOME)/.brew/Cellar/cmu-pocketsphinx/HEAD-80d8e28/lib\
+				  -L$(HOME)/.brew/Cellar/cmu-sphinxbase/HEAD-562d047/lib\
+				  -lpocketsphinx -lsphinxbase -lsphinxad -lpthread -lm -lblas -llapack
+
 EXEC_PKG		= `pkg-config --cflags pocketsphinx sphinxbase`
-FLAGS_SPHINX	= -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" `pkg-config --libs pocketsphinx sphinxbase`
+FLAGS_SPHINX	= -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"\
+				  `pkg-config --libs pocketsphinx sphinxbase`
 
 BASE			= server.c socket.c receive.c signal.c
 REQUEST			= request.c method.c post_content.c post_form.c post_multipart.c
@@ -35,35 +41,17 @@ OBJECTS			= $(FUNCTIONS:.c=.o)
 
 all: $(SERVER)
 
-$(SERVER): $(FUNCTIONS:.c=.o)
-	@$(CC) $(CFLAGS) $(INCLUDES) $^ -o $(SERVER)
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-srcs/request/*.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c srcs/request/*.c -o $@
-
-srcs/*.o:
-	@$(CC) $(CLFAGS) $(INCLUDES) -c srcs/*.c -o $@
-
-srcs/response/*.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c srcs/response/*.c -o $@
+$(SERVER): $(OBJECTS)
+	$(CC) $(CFLAGS) $(INCLUDES) $^ -o $(SERVER) $(LIBRARIES)
 
 analyze_data/sphinx.o:
-	gcc -c `pkg-config --cflags pocketsphinx sphinxbase` -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\" `pkg-config --libs pocketsphinx sphinxbase` analyze_data/sphinx.c -o $@
-
-analyze_data/dispatch.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c analyze_data/dispatch.c -o $@
-
-api/*.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c srcs/api/*.c -o $@
-
-srcs/libft/*.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c srcs/libft/*.c -o $@
-
-srcs/libft/queue/*.o:
-	@$(CC) $(CFLAGS) $(INCLUDES) -c srcs/libft/queue*.c -o $@
+	$(CC) -c $(EXEC_PKG) $(FLAGS_SPHINX) analyze_data/sphinx.c -o $@
 
 clean:
-	@$(RM) $(FUNCTIONS:.c=.o)
+	@$(RM) $(OBJECTS)
 
 fclean: clean
 	@$(RM) $(SERVER)

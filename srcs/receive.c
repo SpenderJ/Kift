@@ -41,6 +41,8 @@ static ssize_t	request_read(int fd, uint8_t **data, uint8_t **end, int *status)
 			*status = response_error(fd, NULL, INTERNAL_SERVER_ERROR);
 			return (0);
 		}
+		write(1, *data, (*end - *data));
+		write(1, "\n", 1);
 	}
 	else if (size == 0)
 		*status = response_error(fd, NULL, NO_CONTENT);
