@@ -75,18 +75,22 @@ class App extends React.Component {
 
                     //send to the server
                     const formData = new FormData();
-                    formData.append('audio', blob);
-                    fetch('http://127.0.0.1:6060/api/sendaudio', {
-                        method: "post",
-                        headers: { 'Content-Type': 'audio/wav' },
+                    const options = {
+                        method: 'POST',
                         body: formData
-                    })
+                    };
+                    if (options && options.headers) {
+                        delete options.headers['Content-Type'];
+                      }
+                    formData.append('audio', blob);
+                    
+                    fetch('http://127.0.0.1:6060/api/sendaudio', options)
                         .then(response => {
                             return response.text()
                         }).then(text => {
                             console.log(text);
                             if (text.toLowerCase() === "pickle")
-                                this.setState({pickle_mode: true})
+                                this.setState({ pickle_mode: true })
                             this.setState({ recognition: text })
                         });
                 });
