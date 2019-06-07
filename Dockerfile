@@ -18,8 +18,13 @@ RUN apt-get install git -y
 
 RUN apt-get install build-essential -y
 
+RUN apt-get install gnustep-gui-runtime
+
+RUN apt-get install sox
+
 
 RUN git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+RUN git clone https://github.com/SpenderJ/Kiftted.git Kift
 RUN mkdir ~/.linuxbrew/bin
 RUN ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 RUN eval $(~/.linuxbrew/bin/brew shellenv)
