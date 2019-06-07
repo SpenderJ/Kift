@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:26:27 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/07 15:12:09 by juspende         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:13:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,5 +215,5 @@ void send_sms(const char *str)
 void pickle(const char *str)
 {
 	(void)str;
-	system("play ../audio/pickle.wav");
+	system("play audio/pickle.wav");
 }
