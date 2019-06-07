@@ -100,7 +100,7 @@ class App extends React.Component {
                     <img src={this.state.pickle_mode === false ? logo : pickle} className="App-logo" alt="logo" />
                     {this.state.record === false ? <h2> Speak with Rick</h2> : <h2> Speaking ...</h2>}
                     {this.state.record === false ? <button id="speak" type="button" disabled> Hit 'Space' and start speaking </button> : <button type="button" id="stop">Hit 'Space' and wait for the answer </button>}
-                    {this.state.recognition === "" ? <p id="comment"> Try: "Hello", "Open Slack", "Look for 42 on Google" ...</p> : <p id="recognition"> ' {this.state.recognition} ' </p>}
+                    {this.state.recognition === "" ? <p id="comment"> Try: "Play Music", "Open SLACK", "Check Weather", "Lights down"...</p> : <p id="recognition"> ' {this.state.recognition} ' </p>}
                     <ReactMic record={this.state.record} className="sound-wave" onStop={this.onStop} onData={this.onData} strokeColor="#00FF00" backgroundColor="#282C34" />
                 </header>
             </div>

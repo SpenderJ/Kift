@@ -149,4 +149,5 @@ void		pickle(const char *str)
 {
 	(void)str;
 	system("say `I turned myself into a pickle. I am pickle RICK !`");
+	system("play ../audio/pickle.wav")
 }
