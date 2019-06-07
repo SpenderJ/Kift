@@ -30,7 +30,7 @@ class App extends React.Component {
 
     componentDidMount() {
         const isFirefox = typeof InstallTrigger !== 'undefined';
-        const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        const isChrome = window.chrome;
         if (isFirefox || isChrome) {
             document.addEventListener('keydown', this.handleKeyPress);
         }
