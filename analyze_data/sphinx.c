@@ -75,6 +75,7 @@ t_dispatch	g_fn[] = {
 	"LIGHTS FULL", lights_full,
 	"LIGHTS DOWN", lights_down,
 	"OPEN", open_app,
+	"PICKLE", pickle,
 	"SET TIMER", set_timer,
 	"WHO IS CONNECTED", who_is_connected,
 	"WHERE IS CONNECTED", where_is_connected,
@@ -89,7 +90,7 @@ static int			exec_cmd(const char *str)
 	int		i;
 
 	i = 0;
-	while (i < 17)
+	while (i < 18)
 	{
 		if (!strncmp(str, g_fn[i].key, strlen(g_fn[i].key)))
 		{

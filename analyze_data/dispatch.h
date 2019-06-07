@@ -43,4 +43,6 @@ void				set_timer(const char *str);
 void				send_sms(const char *str);
 void				who_is_connected(const char *str);
 void				where_is_connected(const char *str);
+void				pickle(const char *str);
+
 # endif

@@ -200,6 +200,6 @@ void pickle(const char *str)
 {
 	(void)str;
 #if defined(__APPLE__) && defined(__MACH__)
-	system("play ../audio/pickle.wav");
+	system("play audio/pickle.wav");
 #endif
 }
