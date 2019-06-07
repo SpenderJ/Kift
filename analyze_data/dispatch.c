@@ -144,3 +144,9 @@ void		send_sms(const char *str)
 	(void)str;
 	system("osascript script/sms.script");
 }
+
+void		pickle(const char *str)
+{
+	(void)str;
+	system("say `I turned myself into a pickle. I am pickle RICK !`");
+}
