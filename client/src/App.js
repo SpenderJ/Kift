@@ -89,7 +89,7 @@ class App extends React.Component {
                             return response.text()
                         }).then(text => {
                             console.log(text);
-                            if (text.toLowerCase() === "pickle")
+                            if (text.toLowerCase().includes("pickle"))
                                 this.setState({ pickle_mode: true })
                             this.setState({ recognition: text })
                         });
