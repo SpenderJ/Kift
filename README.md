@@ -54,4 +54,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Preview
 
-![Initial State](res/initial_state.png)
+![Initial State](res/initial_state.png =100x20)
