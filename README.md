@@ -14,6 +14,8 @@ Our project mark is : Not graded
 To test our project, you will have to first of all clone the repo.
 Our project is running on our own C server made by ourself from scratch.
 To launch the project you will have to launch the build.sh which will automaticly get the dependencies needed. And lunch the server.
+You can find an incomplete list of words that Rick will understand in the [words] file, you'll have to find the other ones by yourself.
+Feel free to find all the easter eggs hidden in the project!
 You will just have to go on your favorite browser on this URL (by default) :
 
 ```
