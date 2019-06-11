@@ -54,4 +54,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Preview
 
-![Initial State](https://raw.githubusercontent.com/SpenderJ/Kift/master/res/initial_state.png)
+![Initial State](res/initial_state.png)
