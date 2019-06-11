@@ -1,2 +1,8 @@
 # Ignore Nodes Modules
 client/node_modules/*
+
+# History
+.history.txt
+
+.vscode
+._*

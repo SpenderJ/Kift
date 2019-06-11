@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 
-docker-machine create rick
-docker-machine env rick
-eval $(docker-machine env rick)
-docker start rick
-docker exec -it rick bash
+docker build --target kift .
+docker run --name rick --volume $PWD:/home --port 6060 -dt kift
