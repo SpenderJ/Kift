@@ -31,7 +31,7 @@ Alexandre Le-Goff
 
 * **Jules Spender** - *BackEnd & HTTP Server* - https://github.com/SpenderJ
 * **Thomas Cherret** - *User Interface* - https://github.com/tcheee
-* **Maxence Jacques** - *Socket & HTTP Server* - https://github.com/maxencejded
+* **Maxence Jacques** - *BackEnd & HTTP Server* - https://github.com/maxencejded
 * **Alexandre Le-Goff** - *Sphinx Implementation* - https://github.com/Alexx42
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
