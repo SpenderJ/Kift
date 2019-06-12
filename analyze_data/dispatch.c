@@ -6,7 +6,7 @@
 /*   By: ale-goff <ale-goff@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:26:27 by ale-goff          #+#    #+#             */
-/*   Updated: 2019/06/07 15:13:32 by juspende         ###   ########.fr       */
+/*   Updated: 2019/06/11 19:45:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,7 +200,7 @@ void where_is_connected(const char *str)
 {
 	(void)str;
 #if defined(__APPLE__) && defined(__MACH__)
-	system("osascript script/where_connetcted.script");
+	system("osascript script/where_connected.script");
 #endif
 }
 

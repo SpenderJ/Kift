@@ -48,5 +48,6 @@ int				sendaudio(t_http *request, t_reponse *answer)
 		system(buffer);
 		write(answer->fd, word, strlen(word));
 	}
+	ft_free((char *)word);
 	return (OK);
 }

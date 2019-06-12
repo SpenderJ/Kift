@@ -126,7 +126,7 @@ static const char	*recognize_from_file(char *path)
 		if (!in_speech && utt_started)
 		{
 			ps_end_utt(g_ps);
-			hyp = ps_get_hyp(g_ps, NULL);
+			hyp = strdup(ps_get_hyp(g_ps, NULL));
 			if (hyp != NULL)
 				return (hyp);
 			ps_start_utt(g_ps);
