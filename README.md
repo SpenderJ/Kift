@@ -9,7 +9,7 @@ Your goal is to: Teach the voice recognition library Sphinx to recognize your vo
 
 ## Running the tests
 
-Our project mark is : Not graded
+Our project mark is : 120/100
 
 To test our project, you will have to first of all clone the repo.
 Our project is running on our own C server made by ourself from scratch.
